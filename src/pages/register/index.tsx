@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Input } from '../../components/input/input';
 
 import { useForm } from 'react-hook-form';
-import { TypeOf, z } from 'zod';
+import {  z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { auth } from '../../services/firebaseConnection';

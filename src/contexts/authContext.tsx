@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useState, useEffect } from "react";
-import { onAuthStateChanged, User } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../services/firebaseConnection";
 
 interface AuthProviderProps {
@@ -64,7 +64,7 @@ function AuthProvider({ children }: AuthProviderProps) {
                 signed: !!user,
                 loadingAuth,
                 handleInfoUser,
-                user
+                user,
             }}>
             {children}
         </AuthContext.Provider>
