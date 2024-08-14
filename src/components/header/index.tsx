@@ -25,7 +25,7 @@ export function Header() {
         {!loadingAuth && signed && (
           <div className='flex flex-row justify-center items-center gap-3'>
             <div>
-              <h1>Seja bem vindo <strong>{user?.name}</strong></h1>
+              <h1 className='text-center'>Seja bem vindo <strong>{user?.name}</strong></h1>
             </div>
             <Link to='/dashboard'>
               <div className='border-2 rounded-full p-1 border-gray-900'>
