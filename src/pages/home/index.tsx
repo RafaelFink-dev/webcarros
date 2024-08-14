@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { collection, query, getDocs, orderBy, where } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 interface CarsProps {
   id: string;
@@ -104,6 +105,11 @@ export function Home() {
 
   }
 
+  function resetFilter(){
+    loadCars();
+    setInput("");
+  }
+
 
   return (
     <Container>
@@ -119,6 +125,12 @@ export function Home() {
           onClick={handleSearchCar}
         >
           Buscar
+        </button>
+        <button
+          className="bg-red-500 h-9 px-8 rounded-lg text-white font-medium text-justify"
+          onClick={resetFilter}
+        >
+          Limpar
         </button>
       </section>
 
