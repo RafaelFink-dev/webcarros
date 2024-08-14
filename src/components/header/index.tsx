@@ -5,9 +5,12 @@ import { FiUser, FiLogIn } from 'react-icons/fi';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/authContext';
 
+import ReactTooltip from 'react-tooltip';
+
+
 export function Header() {
 
-  const { signed, loadingAuth } = useContext(AuthContext);
+  const { signed, loadingAuth, user } = useContext(AuthContext);
 
 
   return (
@@ -22,11 +25,17 @@ export function Header() {
         </Link>
 
         {!loadingAuth && signed && (
-          <Link to='/dashboard'>
-            <div className='border-2 rounded-full p-1 border-gray-900'>
-              <FiUser size={24} color='#000' />
+          <div className='flex flex-row justify-center items-center gap-3'>
+            <div>
+              <h1>Seja bem vindo <strong>{user?.name}</strong></h1>
             </div>
-          </Link>
+            <Link to='/dashboard' data-tip="Clique para acessar a área privada">
+              <div className='border-2 rounded-full p-1 border-gray-900'>
+                <FiUser size={24} color='#000' />
+              </div>
+              <ReactTooltip place="bottom" type="dark" effect="solid" delayHide={100} />
+            </Link>
+          </div>
         )}
 
         {!loadingAuth && !signed && (
@@ -39,4 +48,3 @@ export function Header() {
     </div>
   )
 }
-
