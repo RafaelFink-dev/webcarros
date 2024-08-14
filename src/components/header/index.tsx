@@ -5,8 +5,6 @@ import { FiUser, FiLogIn } from 'react-icons/fi';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/authContext';
 
-import ReactTooltip from 'react-tooltip';
-
 
 export function Header() {
 
