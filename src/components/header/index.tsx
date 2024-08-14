@@ -29,11 +29,11 @@ export function Header() {
             <div>
               <h1>Seja bem vindo <strong>{user?.name}</strong></h1>
             </div>
-            <Link to='/dashboard' data-tip="Clique para acessar a área privada">
+            <Link to='/dashboard'>
               <div className='border-2 rounded-full p-1 border-gray-900'>
                 <FiUser size={24} color='#000' />
               </div>
-              <ReactTooltip place="bottom" type="dark" effect="solid" delayHide={100} />
+
             </Link>
           </div>
         )}
