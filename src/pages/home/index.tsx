@@ -105,7 +105,7 @@ export function Home() {
 
   }
 
-  function resetFilter(){
+  function resetFilter() {
     loadCars();
     setInput("");
   }
@@ -138,7 +138,16 @@ export function Home() {
         Carros novos e usados em todo brasil
       </h1>
 
+      {cars?.length === 0 && (
+
+        <h1 className="font-bold text-center mt-6 text-2xl mb-4 flex items-center justify-center">
+          Nenhum carro a ser exibido!
+        </h1>
+        
+      )}
+
       <main className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+
 
         {cars?.map(car => (
 
